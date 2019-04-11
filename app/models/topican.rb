@@ -1,0 +1,2 @@
+class Topican < ApplicationRecord
+end

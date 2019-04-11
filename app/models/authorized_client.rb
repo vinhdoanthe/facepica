@@ -1,0 +1,2 @@
+class AuthorizedClient < ApplicationRecord
+end
