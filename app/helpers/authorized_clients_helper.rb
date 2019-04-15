@@ -1,0 +1,2 @@
+module AuthorizedClientsHelper
+end

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Authorized Clients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @authorized_clients.each do |authorized_client| %>
+      <tr>
+        <td><%= link_to 'Show', authorized_client %></td>
+        <td><%= link_to 'Edit', edit_authorized_client_path(authorized_client) %></td>
+        <td><%= link_to 'Destroy', authorized_client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Authorized Client', new_authorized_client_path %>
