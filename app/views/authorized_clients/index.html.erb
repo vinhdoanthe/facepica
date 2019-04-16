@@ -5,6 +5,9 @@
 <table>
   <thead>
     <tr>
+      <th>Client name</th>
+      <th>Client secret</th>
+      <th>Location</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +15,9 @@
   <tbody>
     <% @authorized_clients.each do |authorized_client| %>
       <tr>
+        <td><%= authorized_client.client_name %></td>
+        <td><%= authorized_client.client_secret %></td>
+        <td><%= authorized_client.location %></td>
         <td><%= link_to 'Show', authorized_client %></td>
         <td><%= link_to 'Edit', edit_authorized_client_path(authorized_client) %></td>
         <td><%= link_to 'Destroy', authorized_client, method: :delete, data: { confirm: 'Are you sure?' } %></td>

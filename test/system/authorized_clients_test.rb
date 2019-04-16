@@ -14,6 +14,9 @@ class AuthorizedClientsTest < ApplicationSystemTestCase
     visit authorized_clients_url
     click_on "New Authorized Client"
 
+    fill_in "Client name", with: @authorized_client.client_name
+    fill_in "Client secret", with: @authorized_client.client_secret
+    fill_in "Location", with: @authorized_client.location
     click_on "Create Authorized client"
 
     assert_text "Authorized client was successfully created"
@@ -24,6 +27,9 @@ class AuthorizedClientsTest < ApplicationSystemTestCase
     visit authorized_clients_url
     click_on "Edit", match: :first
 
+    fill_in "Client name", with: @authorized_client.client_name
+    fill_in "Client secret", with: @authorized_client.client_secret
+    fill_in "Location", with: @authorized_client.location
     click_on "Update Authorized client"
 
     assert_text "Authorized client was successfully updated"

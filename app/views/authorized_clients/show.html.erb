@@ -1,4 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Client name:</strong>
+  <%= @authorized_client.client_name %>
+</p>
+
+<p>
+  <strong>Client secret:</strong>
+  <%= @authorized_client.client_secret %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @authorized_client.location %>
+</p>
+
 <%= link_to 'Edit', edit_authorized_client_path(@authorized_client) %> |
 <%= link_to 'Back', authorized_clients_path %>

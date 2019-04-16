@@ -17,7 +17,7 @@ class AuthorizedClientsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create authorized_client" do
     assert_difference('AuthorizedClient.count') do
-      post authorized_clients_url, params: { authorized_client: {  } }
+      post authorized_clients_url, params: { authorized_client: { client_name: @authorized_client.client_name, client_secret: @authorized_client.client_secret, location: @authorized_client.location } }
     end
 
     assert_redirected_to authorized_client_url(AuthorizedClient.last)
@@ -34,7 +34,7 @@ class AuthorizedClientsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update authorized_client" do
-    patch authorized_client_url(@authorized_client), params: { authorized_client: {  } }
+    patch authorized_client_url(@authorized_client), params: { authorized_client: { client_name: @authorized_client.client_name, client_secret: @authorized_client.client_secret, location: @authorized_client.location } }
     assert_redirected_to authorized_client_url(@authorized_client)
   end
 
