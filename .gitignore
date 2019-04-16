@@ -34,3 +34,4 @@ Gemfile.lock
 /log
 /tmp
 .ruby-version
+/config/client.json

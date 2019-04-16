@@ -21,6 +21,7 @@
         <td><%= link_to 'Show', authorized_client %></td>
         <td><%= link_to 'Edit', edit_authorized_client_path(authorized_client) %></td>
         <td><%= link_to 'Destroy', authorized_client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Set Cookie', set_cookie_path(authorized_client) %></td>
       </tr>
     <% end %>
   </tbody>

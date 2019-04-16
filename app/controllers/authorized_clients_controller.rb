@@ -1,7 +1,8 @@
 class AuthorizedClientsController < ApplicationController
   require 'json'
-  before_action :set_authorized_client, only: [:show, :edit, :update, :destroy]
-  after_action :after_save, only: [:update, :create]
+  before_action :authenticate_user!
+  before_action :set_authorized_client, only: [:show, :edit, :update, :destroy, :set_cookie_client_secret]
+  # after_action :after_save, only: [:update, :create]
   # GET /authorized_clients
   # GET /authorized_clients.json
   def index
@@ -63,6 +64,13 @@ class AuthorizedClientsController < ApplicationController
     end
   end
 
+  def set_cookie_client_secret
+    cookies.permanent[:client_secret] = @authorized_client.client_secret
+    flash[:notice] = 'Set cookie successfully'
+    # render :nothing => true
+    # redirect_to authorized_clients_path
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
@@ -75,22 +83,4 @@ class AuthorizedClientsController < ApplicationController
     params.require(:authorized_client).permit(:client_name, :client_secret, :location)
   end
 
-  def after_save
-    begin
-      File.open('~/client.json', "w") do |f|
-        data['id'] = @authorized_client.id
-        data['client_name'] = @authorized_client.client_name
-        data['client_secret'] = @authorized_client.client_secret
-        json.dump(data, f)
-        f.close
-      end
-    rescue
-      # File.new('~/client.json', 'w+') do |f|
-      #   data['id'] = @authorized_client.id
-      #   data['client_name'] = @authorized_client.client_name
-      #   data['client_secret'] = @authorized_client.client_secret
-      #   json.dump(data, f)
-      # end
-    end
-  end
 end
