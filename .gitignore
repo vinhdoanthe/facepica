@@ -35,3 +35,4 @@ Gemfile.lock
 /tmp
 .ruby-version
 /config/client.json
+config/database.yml\nconfig/secrets.yml

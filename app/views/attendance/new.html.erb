@@ -1,0 +1,33 @@
+<h1>Facepica - Topican Attendance Management</h1>
+<div>
+  <video id="camera" width="640" height="480" autoplay></video>
+</div>
+
+<br>
+<p>
+  <button id='compare_image'>Compare Image</button>
+</p>
+<div>
+  <canvas id="canvas" width="640" height="480"></canvas>
+</div>
+<div>
+  <br>
+  <input id='photo_id' placeholder='Enter name for photo' type='text'>
+  <button id='add_to_collection'>Add To Collection</button>
+  <br>
+</div>
+
+<div id='upload_status'></div>
+<div id='upload_result'></div>
+<br>
+<%= image_tag image_url('loading.gif'), height: '100', width: '100', id: 'loading_img' %>
+<!--<img height='100' id='loading_img' src='/assets/images/loading.gif' width='100'>-->
+<audio id='audio_speech' src='#'></audio>
+<br>
+<br>
+<p>
+  <a href="/collection/create">Create Collection</a> | <a href="/collection/delete">Delete Collection</a>
+</p>
+<!--<script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+<!--<script src="js/faceapp.js" type="text/javascript"></script>-->

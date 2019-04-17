@@ -1,0 +1,18 @@
+body {
+    background-color: #ddd;
+    padding: 0.5em;
+    text-align: center;
+    font-family: "Helvetica Neueu", "Helvetica", "Arial", sans;
+}
+
+input {
+    width: 300px;
+}
+
+#camera .placeholder {
+    padding: 0.5em;
+}
+
+button {
+    margin: 0.5em;
+}
