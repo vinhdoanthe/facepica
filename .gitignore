@@ -30,11 +30,11 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 .idea/
-Gemfile.lock
+# Gemfile.lock
 /log
 /tmp
 .ruby-version
 /config/client.json
 /config/database.yml
 /config/secrets.yml
-Gemfile.lock
+# Gemfile.lock
